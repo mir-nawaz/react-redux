@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route, Link } from 'react-router-dom';
 import Topic from './Topic';
 
 export default class Topics extends Component {
- constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       match: props.match
@@ -35,5 +35,4 @@ export default class Topics extends Component {
       </div>
     );
   }
-
-};
+}

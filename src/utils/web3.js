@@ -1,8 +1,8 @@
 import Web3 from 'web3';
 
-const web3 = new Promise(function(resolve, reject) {
+export default new Promise((resolve) => {
   // Wait for loading completion to avoid race conditions with web3 injection timing.
-  window.addEventListener('load', function() {
+  window.addEventListener('load', () => {
     let results;
     let web3 = window.web3;
 
@@ -36,5 +36,3 @@ const web3 = new Promise(function(resolve, reject) {
     }
   });
 });
-
-export default web3;
