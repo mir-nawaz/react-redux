@@ -23,10 +23,11 @@
     "dev": "NODE_ENV=development webpack-dev-server",
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "temp": "echo \"Error: I SHOULD FAIL LOLOLOLOLOL \" && exit 1"
+    "info": "echo \"Info: Running lint on src \" && exit 0"
   },
   "pre-commit": [
-    "test"
+    "info",
+    "lint"
   ],
   "jest": {
     "collectCoverageFrom": [

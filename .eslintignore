@@ -26,5 +26,11 @@ build
 node_modules
 **/node_modules
 
+# setup scripts
+scripts
+
+# webpack configs
+config
+
 # frontend build 
 build_webpack/
