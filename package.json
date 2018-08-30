@@ -22,7 +22,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "dev": "NODE_ENV=development webpack-dev-server",
     "lint": "eslint .",
-    "fix": "eslint . --fix",
+    "lint:fix": "eslint . --fix",
     "info": "echo \"Info: Running lint on src \" && exit 0"
   },
   "pre-commit": [
