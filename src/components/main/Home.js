@@ -5,13 +5,6 @@ import PropTypes from 'prop-types';
 import { fetchUser } from './../../redux/actions/userActions';
 import { fetchTweets } from './../../redux/actions/tweetsActions';
 
-@connect((store) => {
-  return {
-    user: store.user.user,
-    userFetched: store.user.fetched,
-    tweets: store.tweets.tweets
-  };
-})
 
 export default class Home extends Component {
   static propTypes = {
@@ -20,24 +13,37 @@ export default class Home extends Component {
     tweets: PropTypes.array
   };
 
-  componentWillMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchUser());
-  }
-
   render() {
-    const { user, tweets } = this.props;
+    return (<div id="wrapper" className="gray-bg">
+      <div className="middle-box text-center loginscreen animated fadeInDown" style={{ height: '100vh' }}>
+        <h3>Welcome to True API</h3>
+        <p>Login in. To see it in action.</p>
+        <form className="m-t" role="form" action="#">
+          <div className="form-group">
+            <input type="email" name="email" className="form-control" placeholder={'Email'} required=""/>
+          </div>
+          <div className="form-group">
+            <input type="password" name="password" className="form-control" placeholder={'Password'} required=""/>
+          </div>
 
-    if (!tweets.length) {
-      return <button onClick={this.fetchTweets}>load tweets</button>;
-    }
-
-    const mappedTweets = tweets.map((tweet) => <li key={tweet.id}>{tweet.text}</li>);
-
-    return <div>
-      <h1>{user.name}</h1>
-      <ul>{mappedTweets}</ul>
-    </div>;
+          <div className="form-group">
+            <p> hello world </p>
+          </div>
+          <button type="button" id="btnLogin" className="btn btn-primary block full-width m-b">{'Login'}</button>
+          <a href="#">
+            <small>ForgotPassword</small>
+          </a>
+          <p className="text-muted text-center">
+            <small>Donothaveanaccount</small>
+          </p>
+          <a className="btn btn-sm btn-white btn-block" href="#">CreateAnAccount</a>
+          <a className="btn btn-sm btn-white btn-block" href="#">ActivateAccount</a>
+        </form>
+        <p className="m-t">
+          <small>&copy; 2019 Avanza Solutions. All rights reserved</small>
+        </p>
+      </div>
+    </div>);
   }
 
   fetchTweets = () => {

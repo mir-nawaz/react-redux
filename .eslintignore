@@ -34,3 +34,6 @@ config
 
 # frontend build 
 build_webpack/
+
+src/registerServiceWorker.js
+src/theme/assets/js/pace

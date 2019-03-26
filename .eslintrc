@@ -15,7 +15,8 @@
     "contract": true,
     "Promise": true,
     "it": true,
-    "assert": true
+    "assert": true,
+    "window": true
   },
   "parserOptions": {
     "ecmaVersion": 6
